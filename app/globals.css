@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base:     #080b11;
+  --bg-surface:  #0d1117;
+  --bg-elevated: #111827;
+  --border:      rgba(255,255,255,0.06);
+  --text-primary: #f1f5f9;
+  --text-muted:   rgba(255,255,255,0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg-base);
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+/* Smooth transitions everywhere */
+* { transition-property: color, background-color, border-color, opacity;
+    transition-duration: 150ms; }
+
+/* Number counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count { animation: countUp 0.3s ease-out; }
+
+/* Feed item slide-in */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in { animation: slideIn 0.25s ease-out; }
